@@ -79,6 +79,9 @@ func (mh *MaxHeap) bubbleDown() {
 				swap = leftIdx
 			}
 		}
+		// if left is less than element(which did not change the swap value) and right is more than element
+		// or if left is more than element (which changed th swap value) and right's value is more than left's value
+		// swap to the left
 		if rightIdx < lenght {
 			right = mh.Value[rightIdx]
 			if (swap == -1 && right > element) ||
@@ -91,10 +94,9 @@ func (mh *MaxHeap) bubbleDown() {
 			break // if swap is not haapen break the loop
 		}
 
-		mh.Value[idx] = mh.Value[swap]
-		mh.Value[swap] = element
-		idx = swap
+		// swap the value between the greatest child
+		mh.Value[idx] = mh.Value[swap] // set the element to the swap value
+		mh.Value[swap] = element       // set swap value to element
+		idx = swap                     // next loop start at the swaped index
 	}
 }
-
-// [12 39 33 18 27]
