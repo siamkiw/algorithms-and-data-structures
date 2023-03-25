@@ -1,5 +1,7 @@
 package heaps
 
+import "errors"
+
 // for any inedx of an array n..
 // left child is 2n+1
 // right child is 2n+2
@@ -43,11 +45,11 @@ func (mh *MaxHeap) bubbleUp() {
 	}
 }
 
-func (mh *MaxHeap) Remove() int {
+func (mh *MaxHeap) Remove() (int, error) {
 	if len(mh.Value) == 1 {
 		max := mh.Value[0]
 		mh.Value = []int{}
-		return max
+		return max, nil
 	} else if len(mh.Value) > 0 {
 		max := mh.Value[0]
 		mh.Value[0] = mh.Value[len(mh.Value)-1]
@@ -55,10 +57,10 @@ func (mh *MaxHeap) Remove() int {
 
 		mh.bubbleDown()
 
-		return max
+		return max, nil
 	}
 
-	return 0
+	return -1, errors.New("unexpected_error")
 
 }
 
