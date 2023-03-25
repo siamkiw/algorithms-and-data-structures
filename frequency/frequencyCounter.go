@@ -52,3 +52,17 @@ func Anagrams(arr1 string, arr2 string) bool {
 
 	return true
 }
+
+func containsDuplicate(nums []int) bool {
+	data := map[int]bool{}
+
+	for _, value := range nums {
+		if data[value] {
+			return false
+		}
+
+		data[value] = true
+	}
+
+	return true
+}
