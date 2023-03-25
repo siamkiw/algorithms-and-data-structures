@@ -10,7 +10,7 @@ import (
 
 	// "github.com/siamkiw/algo/bst"
 	// "github.com/siamkiw/algo/recursion"
-	"github.com/siamkiw/algo/listleet"
+	"github.com/siamkiw/algo/heaps"
 )
 
 func main() {
@@ -82,38 +82,56 @@ func main() {
 	// res := romanToInt("MCMXCIV")
 	// fmt.Println("res :", res)
 	// [1,2,4]
-	list := &listleet.ListNode{
-		Val: 1,
-	}
-	list2 := &listleet.ListNode{
-		Val: 2,
-	}
-	list3 := &listleet.ListNode{
-		Val: 4,
-	}
+	// list := &listLeet.ListNode{
+	// 	Val: 1,
+	// }
+	// list2 := &listLeet.ListNode{
+	// 	Val: 2,
+	// }
+	// list3 := &listLeet.ListNode{
+	// 	Val: 4,
+	// }
 
-	list.Next = list2
-	list2.Next = list3
+	// list.Next = list2
+	// list2.Next = list3
 
-	list_1 := &listleet.ListNode{
-		Val: 1,
-	}
-	list_2 := &listleet.ListNode{
-		Val: 2,
-	}
-	list_3 := &listleet.ListNode{
-		Val: 4,
-	}
-	list_1.Next = list_2
-	list_2.Next = list_3
+	// list_1 := &listLeet.ListNode{
+	// 	Val: 1,
+	// }
+	// list_2 := &listLeet.ListNode{
+	// 	Val: 2,
+	// }
+	// list_3 := &listLeet.ListNode{
+	// 	Val: 4,
+	// }
+	// list_1.Next = list_2
+	// list_2.Next = list_3
 
-	res := listleet.MergeTwoLists(list, list_1)
+	// res := listLeet.MergeTwoLists(list, list_1)
 
-	current := res
-	for current.Next != nil {
-		fmt.Println(current.Val)
-		current = current.Next
-	}
+	// current := res
+	// for current.Next != nil {
+	// 	fmt.Println(current.Val)
+	// 	current = current.Next
+	// }
+
+	mh := &heaps.MaxHeap{}
+	mh.Value = []int{}
+	mh.Insert(41)
+	mh.Insert(39)
+	mh.Insert(33)
+	mh.Insert(18)
+	mh.Insert(27)
+	mh.Insert(12)
+	mh.Insert(55)
+	// mh.Insert(20)
+	r := mh.Remove()
+	fmt.Println("r :", r)
+	fmt.Println("mh :", mh.Value)
+	fmt.Println("----")
+	r = mh.Remove()
+	fmt.Println("r :", r)
+	fmt.Println("mh :", mh.Value)
 
 }
 
