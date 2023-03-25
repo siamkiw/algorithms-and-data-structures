@@ -125,11 +125,11 @@ func main() {
 	mh.Insert(12)
 	mh.Insert(55)
 	// mh.Insert(20)
-	r := mh.Remove()
+	r, _ := mh.Remove()
 	fmt.Println("r :", r)
 	fmt.Println("mh :", mh.Value)
 	fmt.Println("----")
-	r = mh.Remove()
+	r, _ = mh.Remove()
 	fmt.Println("r :", r)
 	fmt.Println("mh :", mh.Value)
 
