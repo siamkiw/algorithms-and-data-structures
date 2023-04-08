@@ -10,7 +10,8 @@ import (
 
 	// "github.com/siamkiw/algo/bst"
 	// "github.com/siamkiw/algo/recursion"
-	"github.com/siamkiw/algo/heaps"
+	// "github.com/siamkiw/algo/heaps"
+	"github.com/siamkiw/algo/graphs"
 )
 
 func main() {
@@ -115,23 +116,82 @@ func main() {
 	// 	current = current.Next
 	// }
 
-	mh := &heaps.MaxHeap{}
-	mh.Value = []int{}
-	mh.Insert(41)
-	mh.Insert(39)
-	mh.Insert(33)
-	mh.Insert(18)
-	mh.Insert(27)
-	mh.Insert(12)
-	mh.Insert(55)
-	// mh.Insert(20)
-	r, _ := mh.Remove()
-	fmt.Println("r :", r)
-	fmt.Println("mh :", mh.Value)
-	fmt.Println("----")
-	r, _ = mh.Remove()
-	fmt.Println("r :", r)
-	fmt.Println("mh :", mh.Value)
+	// mh := &heaps.MaxHeap{}
+	// mh.Value = []int{}
+	// mh.Insert(41)
+	// mh.Insert(39)
+	// mh.Insert(33)
+	// mh.Insert(18)
+	// mh.Insert(27)
+	// mh.Insert(12)
+	// mh.Insert(55)
+	// // mh.Insert(20)
+	// r, _ := mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// fmt.Println("----")
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+	// r, _ = mh.Remove()
+	// fmt.Println("r :", r)
+	// fmt.Println("mh :", mh.Value)
+
+	g := graphs.NewGraph()
+	// g.AddVertex("hello world")
+	// g.AddVertex("hello kiw")
+	// g.AddVertex("test1")
+	// g.AddVertex("test2")
+	// g.AddEdge("hello world", "hello kiw")
+	// g.AddEdge("hello world", "test1")
+	// g.AddEdge("test2", "test1")
+	// g.AddEdge("hello kiw", "test1")
+
+	// g.RemoveVertex("hello world")
+	// fmt.Println("before remove edge :", g.AdjacencyList)
+
+	g.AddVertex("A")
+	g.AddVertex("B")
+	g.AddVertex("C")
+	g.AddVertex("D")
+	g.AddVertex("E")
+	g.AddVertex("F")
+	g.AddVertex("G")
+
+	g.AddEdge("A", "B")
+	g.AddEdge("A", "C")
+	g.AddEdge("B", "D")
+	g.AddEdge("C", "E")
+	g.AddEdge("D", "E")
+	g.AddEdge("D", "F")
+	g.AddEdge("E", "F")
+
+	// g.RemoveEdge("hello world", "hello kiw")
+	dfsR := g.DepthFirstSearchRecursive("A")
+	fmt.Println("dfsR :", dfsR)
+
+	dfsI := g.DepthFirstSearchIterative("A")
+	fmt.Println("dfsI :", dfsI)
+
+	bfsI := g.BreadthFirstSearchIterative("A")
+	fmt.Println("bfsI :", bfsI)
+
+	fmt.Println("after remove edge :", g.AdjacencyList)
 
 }
 
