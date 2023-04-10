@@ -12,6 +12,8 @@ import (
 	// "github.com/siamkiw/algo/recursion"
 	// "github.com/siamkiw/algo/heaps"
 	"github.com/siamkiw/algo/graphs"
+	"github.com/siamkiw/algo/heaps/minHeaps"
+	"github.com/siamkiw/algo/weightedGraphs"
 )
 
 func main() {
@@ -192,6 +194,14 @@ func main() {
 	fmt.Println("bfsI :", bfsI)
 
 	fmt.Println("after remove edge :", g.AdjacencyList)
+
+	fmt.Println("------minHeaps------")
+	minHeaps.Exp()
+	fmt.Println("------minHeaps------")
+
+	fmt.Println("-----WeightedGraph------")
+	weightedGraphs.Exp()
+	fmt.Println("-----WeightedGraph------")
 
 }
 
